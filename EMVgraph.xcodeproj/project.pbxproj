@@ -10,6 +10,11 @@
 		485C007D16F0D88300743C04 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 485C007C16F0D88300743C04 /* Foundation.framework */; };
 		485C008016F0D88300743C04 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 485C007F16F0D88300743C04 /* main.m */; };
 		485C008416F0D88300743C04 /* EMVgraph.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 485C008316F0D88300743C04 /* EMVgraph.1 */; };
+		485C009416F0D8EB00743C04 /* Entity.m in Sources */ = {isa = PBXBuildFile; fileRef = 485C008B16F0D8EB00743C04 /* Entity.m */; };
+		485C009516F0D8EB00743C04 /* Node.m in Sources */ = {isa = PBXBuildFile; fileRef = 485C008D16F0D8EB00743C04 /* Node.m */; };
+		485C009616F0D8EB00743C04 /* Edge.m in Sources */ = {isa = PBXBuildFile; fileRef = 485C008F16F0D8EB00743C04 /* Edge.m */; };
+		485C009716F0D8EB00743C04 /* Row.m in Sources */ = {isa = PBXBuildFile; fileRef = 485C009116F0D8EB00743C04 /* Row.m */; };
+		485C009816F0D8EB00743C04 /* UUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 485C009316F0D8EB00743C04 /* UUID.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +36,16 @@
 		485C007F16F0D88300743C04 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		485C008216F0D88300743C04 /* EMVgraph-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EMVgraph-Prefix.pch"; sourceTree = "<group>"; };
 		485C008316F0D88300743C04 /* EMVgraph.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = EMVgraph.1; sourceTree = "<group>"; };
+		485C008A16F0D8EB00743C04 /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = "<group>"; };
+		485C008B16F0D8EB00743C04 /* Entity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entity.m; sourceTree = "<group>"; };
+		485C008C16F0D8EB00743C04 /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
+		485C008D16F0D8EB00743C04 /* Node.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Node.m; sourceTree = "<group>"; };
+		485C008E16F0D8EB00743C04 /* Edge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Edge.h; sourceTree = "<group>"; };
+		485C008F16F0D8EB00743C04 /* Edge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Edge.m; sourceTree = "<group>"; };
+		485C009016F0D8EB00743C04 /* Row.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Row.h; sourceTree = "<group>"; };
+		485C009116F0D8EB00743C04 /* Row.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Row.m; sourceTree = "<group>"; };
+		485C009216F0D8EB00743C04 /* UUID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUID.h; sourceTree = "<group>"; };
+		485C009316F0D8EB00743C04 /* UUID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUID.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +89,16 @@
 			isa = PBXGroup;
 			children = (
 				485C007F16F0D88300743C04 /* main.m */,
+				485C008A16F0D8EB00743C04 /* Entity.h */,
+				485C008B16F0D8EB00743C04 /* Entity.m */,
+				485C008C16F0D8EB00743C04 /* Node.h */,
+				485C008D16F0D8EB00743C04 /* Node.m */,
+				485C008E16F0D8EB00743C04 /* Edge.h */,
+				485C008F16F0D8EB00743C04 /* Edge.m */,
+				485C009016F0D8EB00743C04 /* Row.h */,
+				485C009116F0D8EB00743C04 /* Row.m */,
+				485C009216F0D8EB00743C04 /* UUID.h */,
+				485C009316F0D8EB00743C04 /* UUID.m */,
 				485C008316F0D88300743C04 /* EMVgraph.1 */,
 				485C008116F0D88300743C04 /* Supporting Files */,
 			);
@@ -140,6 +165,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				485C008016F0D88300743C04 /* main.m in Sources */,
+				485C009416F0D8EB00743C04 /* Entity.m in Sources */,
+				485C009516F0D8EB00743C04 /* Node.m in Sources */,
+				485C009616F0D8EB00743C04 /* Edge.m in Sources */,
+				485C009716F0D8EB00743C04 /* Row.m in Sources */,
+				485C009816F0D8EB00743C04 /* UUID.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
