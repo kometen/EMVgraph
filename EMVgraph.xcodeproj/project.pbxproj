@@ -46,7 +46,7 @@
 		485C009116F0D8EB00743C04 /* Row.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Row.m; sourceTree = "<group>"; };
 		485C009216F0D8EB00743C04 /* UUID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUID.h; sourceTree = "<group>"; };
 		485C009316F0D8EB00743C04 /* UUID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUID.m; sourceTree = "<group>"; };
-		485C009916F0DF6A00743C04 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		485C009916F0DF6A00743C04 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = EMVgraph/README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +64,7 @@
 		485C007016F0D88300743C04 = {
 			isa = PBXGroup;
 			children = (
+				485C009916F0DF6A00743C04 /* README.md */,
 				485C007E16F0D88300743C04 /* EMVgraph */,
 				485C007B16F0D88300743C04 /* Frameworks */,
 				485C007A16F0D88300743C04 /* Products */,
@@ -101,7 +102,6 @@
 				485C009216F0D8EB00743C04 /* UUID.h */,
 				485C009316F0D8EB00743C04 /* UUID.m */,
 				485C008316F0D88300743C04 /* EMVgraph.1 */,
-				485C009916F0DF6A00743C04 /* README.md */,
 				485C008116F0D88300743C04 /* Supporting Files */,
 			);
 			path = EMVgraph;
