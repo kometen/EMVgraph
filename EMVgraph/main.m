@@ -11,6 +11,7 @@
 #import "Node.h"
 #import "Edge.h"
 #import "Row.h"
+#import "Relation.h"
 #import "UUID.h"
 
 int main(int argc, const char * argv[]) {
@@ -26,20 +27,24 @@ int main(int argc, const char * argv[]) {
         Edge *edge3 = [[Edge alloc] init];
         Row *row1 = [[Row alloc] initWithKey:@"firstname" andValue:@"Claus"];
         Row *row2 = [[Row alloc] initWithKey:@"lastname" andValue:@"Guttesen"];
-        [node1 setUUID:[UUID GetUUID] name:@"nodeName1" description:@"nodeDescription1"];
         [node1 addRow:row1];
         [node1 addRow:row2];
-        [node2 setUUID:[UUID GetUUID] name:@"nodeName2" description:@"nodeDescription2"];
-        [node3 setUUID:[UUID GetUUID] name:@"nodeName3" description:@"nodeDescription3"];
-        [edge1 setUUID:[UUID GetUUID] name:@"edgeName1" description:@"edgeDescription1"];
-        [edge2 setUUID:[UUID GetUUID] name:@"edgeName2" description:@"edgeDescription2"];
-        [edge3 setUUID:[UUID GetUUID] name:@"edgeName3" description:@"edgeDescription3"];
+        [node1 setUUID:[UUID GetUUID] name:@"Claus Guttesen" description:@"complete name"];
+        [node2 setUUID:[UUID GetUUID] name:@"Anne-Merete Kleppenes" description:@"complete name"];
+        [node3 setUUID:[UUID GetUUID] name:@"Eline Clausdatter Kleppenes" description:@"complete name"];
+        [edge1 setUUID:[UUID GetUUID] name:@"wife" description:@"married to"];
+        [edge2 setUUID:[UUID GetUUID] name:@"husbond" description:@"married to"];
+        [edge3 setUUID:[UUID GetUUID] name:@"daughter" description:@"child"];
+        Relation *relation1 = [[Relation alloc] initWithNode:node2 andEdge:edge1];
+        Relation *relation2 = [[Relation alloc] initWithNode:node3 andEdge:edge3];
         
         [nodeChain addObject:mnode];
         [nodeChain addObject:node1];
         [nodeChain addObject:node2];
         [nodeChain addObject:node3];
-        NSLog(@"node 2: value: %@", node1.description);
+        [node1 addRelation:relation1];
+        [node1 addRelation:relation2];
+        NSLog(@"node 1: name: %@, value: %@", node1.name, node1.description);
         for (Node *node in nodeChain) {
             NSLog(@"node-uuid: %@, node-name: %@", node.uuid, node.name);
         }

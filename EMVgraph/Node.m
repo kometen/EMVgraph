@@ -26,7 +26,7 @@
     self.description = description;
 }
 
--(void)addRelation:(Edge *)relation {
+-(void)addRelation:(Relation *)relation {
     [_relations addObject:relation];
 }
 

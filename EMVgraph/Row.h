@@ -5,6 +5,7 @@
 //  Created by Claus Guttesen on 01/03/13.
 //  Copyright (c) 2013 Claus Guttesen. All rights reserved.
 //
+// Simple key-value pair.
 
 #import <Foundation/Foundation.h>
 
