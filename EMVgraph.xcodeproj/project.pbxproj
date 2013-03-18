@@ -15,6 +15,7 @@
 		485C009616F0D8EB00743C04 /* Edge.m in Sources */ = {isa = PBXBuildFile; fileRef = 485C008F16F0D8EB00743C04 /* Edge.m */; };
 		485C009716F0D8EB00743C04 /* Row.m in Sources */ = {isa = PBXBuildFile; fileRef = 485C009116F0D8EB00743C04 /* Row.m */; };
 		485C009816F0D8EB00743C04 /* UUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 485C009316F0D8EB00743C04 /* UUID.m */; };
+		4896A15D16F4756A00818CB0 /* Relation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4896A15C16F4756A00818CB0 /* Relation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,6 +47,8 @@
 		485C009116F0D8EB00743C04 /* Row.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Row.m; sourceTree = "<group>"; };
 		485C009216F0D8EB00743C04 /* UUID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUID.h; sourceTree = "<group>"; };
 		485C009316F0D8EB00743C04 /* UUID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUID.m; sourceTree = "<group>"; };
+		4896A15B16F4756A00818CB0 /* Relation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Relation.h; sourceTree = "<group>"; };
+		4896A15C16F4756A00818CB0 /* Relation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Relation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +100,8 @@
 				485C008F16F0D8EB00743C04 /* Edge.m */,
 				485C009016F0D8EB00743C04 /* Row.h */,
 				485C009116F0D8EB00743C04 /* Row.m */,
+				4896A15B16F4756A00818CB0 /* Relation.h */,
+				4896A15C16F4756A00818CB0 /* Relation.m */,
 				485C009216F0D8EB00743C04 /* UUID.h */,
 				485C009316F0D8EB00743C04 /* UUID.m */,
 				485C008316F0D88300743C04 /* EMVgraph.1 */,
@@ -170,6 +175,7 @@
 				485C009616F0D8EB00743C04 /* Edge.m in Sources */,
 				485C009716F0D8EB00743C04 /* Row.m in Sources */,
 				485C009816F0D8EB00743C04 /* UUID.m in Sources */,
+				4896A15D16F4756A00818CB0 /* Relation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +278,7 @@
 				485C008916F0D88300743C04 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
