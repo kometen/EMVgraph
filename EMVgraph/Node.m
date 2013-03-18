@@ -15,6 +15,9 @@
     
     if (self) {
         _relations = [NSMutableArray array];
+        self.uuid = [NSString stringWithString:[UUID GetUUID]];
+        self.name = name;
+        self.description = description;
     }
     
     return self;
