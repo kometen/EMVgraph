@@ -12,7 +12,7 @@
 
 @interface Entity : NSObject
 
-@property (nonatomic, assign) NSString *uuid;
+@property (nonatomic, strong) NSString *uuid;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *description;
 @property (nonatomic, strong) NSMutableArray *rows;

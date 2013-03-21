@@ -14,7 +14,7 @@
 -(id)initWithName:(NSString *)name andDescription:(NSString *)description {
     
     if (self) {
-        _relations = [NSMutableArray array];
+        self.relations = [NSMutableArray array];
         self.uuid = [NSString stringWithString:[UUID GetUUID]];
         self.name = name;
         self.description = description;

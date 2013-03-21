@@ -18,25 +18,24 @@ int main(int argc, const char * argv[]) {
     
     @autoreleasepool {
         NSMutableArray *nodeChain = [[NSMutableArray alloc] init];
-        Node *mnode = [[Node alloc] initWithName:@"mnode" andDescription:@"Mother of all Nodes"];
-        Node *node1 = [[Node alloc] init];
-        Node *node2 = [[Node alloc] init];
-        Node *node3 = [[Node alloc] init];
-        Edge *edge1 = [[Edge alloc] init];
-        Edge *edge2 = [[Edge alloc] init];
-        Edge *edge3 = [[Edge alloc] init];
+        Node *mnode = [[Node alloc] initWithName:@"mnode" andDescription:@"Mother of All Nodes"];
+        Node *node1 = [[Node alloc] initWithName:@"Claus Guttesen" andDescription:@"complete name"];
+        Node *node2 = [[Node alloc] initWithName:@"Anne-Merete Kleppenes" andDescription:@"complete name"];
+        Node *node3 = [[Node alloc] initWithName:@"Eline Clausdatter Kleppenes" andDescription:@"complete name"];
+        
+        Edge *edge1 = [[Edge alloc] initWithName:@"wife" andDescription:@"married to"];
+        Edge *edge2 = [[Edge alloc] initWithName:@"husbond" andDescription:@"married to"];
+        Edge *edge3 = [[Edge alloc] initWithName:@"daughter" andDescription:@"daughter"];
+        
         Row *row1 = [[Row alloc] initWithKey:@"firstname" andValue:@"Claus"];
         Row *row2 = [[Row alloc] initWithKey:@"lastname" andValue:@"Guttesen"];
+        
         [node1 addRow:row1];
         [node1 addRow:row2];
-        [node1 setUUID:[UUID GetUUID] name:@"Claus Guttesen" description:@"complete name"];
-        [node2 setUUID:[UUID GetUUID] name:@"Anne-Merete Kleppenes" description:@"complete name"];
-        [node3 setUUID:[UUID GetUUID] name:@"Eline Clausdatter Kleppenes" description:@"complete name"];
-        [edge1 setUUID:[UUID GetUUID] name:@"wife" description:@"married to"];
-        [edge2 setUUID:[UUID GetUUID] name:@"husbond" description:@"married to"];
-        [edge3 setUUID:[UUID GetUUID] name:@"daughter" description:@"child"];
+
         Relation *relation1 = [[Relation alloc] initWithNode:node2 andEdge:edge1];
         Relation *relation2 = [[Relation alloc] initWithNode:node3 andEdge:edge3];
+        Relation *relation3 = [[Relation alloc] initWithNode:node1 andEdge:edge2];
         
         [nodeChain addObject:mnode];
         [nodeChain addObject:node1];
@@ -44,6 +43,7 @@ int main(int argc, const char * argv[]) {
         [nodeChain addObject:node3];
         [node1 addRelation:relation1];
         [node1 addRelation:relation2];
+        [node2 addRelation:relation3];
         NSLog(@"node 1: name: %@, value: %@", node1.name, node1.description);
         for (Node *node in nodeChain) {
             NSLog(@"node-uuid: %@, node-name: %@", node.uuid, node.name);
