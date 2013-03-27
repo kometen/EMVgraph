@@ -71,6 +71,10 @@ int main(int argc, const char * argv[]) {
             NSLog(@"node-uuid: %@, node-name: %@", node.uuid, node.name);
         }
         NSLog(@"node-count: %li", (unsigned long)[nodeChain count]);
+        NSArray *relations = node1.relations;
+        for (Relation *relation in relations) {
+            NSLog(@"relation: %@", relation.node.name);
+        }
     }
     return 0;
     
