@@ -15,10 +15,10 @@
 
 @interface Relation : NSObject
 
-@property (nonatomic, strong) Node *node;
 @property (nonatomic, strong) Edge *edge;
+@property (nonatomic, strong) Node *node;
 
--(Relation *)initWithNode:(Node *)node andEdge:(Edge *)edge;
--(void)setNode:(Node *)node andEdge:(Edge *)edge;
+-(Relation *)initWithEdge:(Edge *)edge andNode:(Node *)node;
+-(void)setEdge:(Edge *)edge andNode:(Node *)node;
 
 @end

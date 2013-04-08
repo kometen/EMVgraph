@@ -18,6 +18,8 @@ int main(int argc, const char * argv[]) {
     
     @autoreleasepool {
         NSMutableArray *nodeChain = [[NSMutableArray alloc] init];
+        NSMutableDictionary *nodeDictionary = [NSMutableDictionary dictionary];
+
         Node *mnode = [[Node alloc] initWithName:@"mnode" andDescription:@"Mother of All Nodes"];
         Node *node1 = [[Node alloc] initWithName:@"Claus Guttesen" andDescription:@"complete name"];
         Node *node2 = [[Node alloc] initWithName:@"Anne-Merete Kleppenes" andDescription:@"complete name"];
@@ -39,14 +41,23 @@ int main(int argc, const char * argv[]) {
         [node1 addRow:row1];
         [node1 addRow:row2];
 
-        Relation *relation1 = [[Relation alloc] initWithNode:node2 andEdge:edge1];
-        Relation *relation2 = [[Relation alloc] initWithNode:node3 andEdge:edge3];
-        Relation *relation3 = [[Relation alloc] initWithNode:node1 andEdge:edge2];
-        Relation *relation4 = [[Relation alloc] initWithNode:node4 andEdge:edge4];
-        Relation *relation5 = [[Relation alloc] initWithNode:node5 andEdge:edge5];
-        Relation *relation6 = [[Relation alloc] initWithNode:node6 andEdge:edge4];
-        Relation *relation7 = [[Relation alloc] initWithNode:node7 andEdge:edge5];
-        Relation *relation8 = [[Relation alloc] initWithNode:node1 andEdge:edge4];
+        Relation *relation1 = [[Relation alloc] initWithEdge:edge1 andNode:node2];
+        Relation *relation2 = [[Relation alloc] initWithEdge:edge3 andNode:node3];
+        Relation *relation3 = [[Relation alloc] initWithEdge:edge2 andNode:node1];
+        Relation *relation4 = [[Relation alloc] initWithEdge:edge4 andNode:node4];
+        Relation *relation5 = [[Relation alloc] initWithEdge:edge5 andNode:node5];
+        Relation *relation6 = [[Relation alloc] initWithEdge:edge4 andNode:node6];
+        Relation *relation7 = [[Relation alloc] initWithEdge:edge5 andNode:node7];
+        Relation *relation8 = [[Relation alloc] initWithEdge:edge4 andNode:node1];
+        
+        [nodeDictionary setObject:mnode forKey:mnode.uuid];
+        [nodeDictionary setObject:node1 forKey:node1.uuid];
+        [nodeDictionary setObject:node2 forKey:node2.uuid];
+        [nodeDictionary setObject:node3 forKey:node3.uuid];
+        [nodeDictionary setObject:node4 forKey:node4.uuid];
+        [nodeDictionary setObject:node5 forKey:node5.uuid];
+        [nodeDictionary setObject:node6 forKey:node6.uuid];
+        [nodeDictionary setObject:node7 forKey:node7.uuid];
         
         [nodeChain addObject:mnode];
         [nodeChain addObject:node1];
@@ -66,17 +77,21 @@ int main(int argc, const char * argv[]) {
         [node2 addRelation:relation7];
         [node3 addRelation:relation8];
         
-        NSLog(@"node 1: name: %@, value: %@", node1.name, node1.description);
-        for (Node *node in nodeChain) {
+/*        for (Node *node in nodeChain) {
             NSLog(@"node-uuid: %@, node-name: %@", node.uuid, node.name);
-        }
-        NSLog(@"node-count: %li", (unsigned long)[nodeChain count]);
+        }*/
         
         Node *thisNode = node3;
         NSArray *relations = thisNode.relations;
         for (Relation *relation in relations) {
-            NSLog(@"node: %@, relation: %@, kind: %@", thisNode.name, relation.node.name, relation.edge.name);
+            NSLog(@"node: %@, relation: %@, uuid: %@", thisNode.name, relation.edge.name, relation.node.uuid);
+            Node *tmpNode = [nodeDictionary objectForKey:relation.node.uuid];
+            NSArray *tmpRelations = tmpNode.relations;
+            for (Relation *tmpRelation in tmpRelations) {
+                NSLog(@"node: %@, relation: %@, uuid: %@", tmpNode.name, tmpRelation.edge.name, tmpRelation.node.uuid);
+            }
         }
+        
     }
     return 0;
     

@@ -10,20 +10,20 @@
 
 @implementation Relation
 
--(Relation *)initWithNode:(Node *)node andEdge:(Edge *)edge {
+-(Relation *)initWithEdge:(Edge *)edge andNode:(Node *)node {
     self = [super init];
     
     if (self) {
-        [self setNode:node];
         [self setEdge:edge];
+        [self setNode:node];
     }
     
     return self;
 }
 
--(void)setNode:(Node *)node andEdge:(Edge *)edge {
-    self.node = node;
+-(void)setEdge:(Edge *)edge andNode:(Node *)node {
     self.edge = edge;
+    self.node = node;
 }
 
 @end
