@@ -83,8 +83,9 @@ int main(int argc, const char * argv[]) {
         
         Node *thisNode = node3;
         NSArray *relations = thisNode.relations;
+        NSLog(@"this node-name: %@", thisNode.name);
         for (Relation *relation in relations) {
-            NSLog(@"node: %@, relation: %@, uuid: %@", thisNode.name, relation.edge.name, relation.node.uuid);
+            NSLog(@"relation: %@, uuid: %@", relation.edge.name, relation.node.uuid);
             Node *tmpNode = [nodeDictionary objectForKey:relation.node.uuid];
             NSArray *tmpRelations = tmpNode.relations;
             for (Relation *tmpRelation in tmpRelations) {
