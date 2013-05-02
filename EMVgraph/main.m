@@ -14,12 +14,32 @@
 #import "Relation.h"
 #import "UUID.h"
 
-int main(int argc, const char * argv[]) {
-    
-    @autoreleasepool {
-        NSMutableArray *nodeChain = [[NSMutableArray alloc] init];
-        NSMutableDictionary *nodeDictionary = [NSMutableDictionary dictionary];
 
+int main(int argc, const char * argv[]) {
+
+    @autoreleasepool {
+        
+        __block NSMutableDictionary *nodeDictionary = [NSMutableDictionary dictionary];
+        __block int nc = 0;
+        
+        __block void (^traverseNodes) (Node *);
+        traverseNodes = [^ (Node *node) {
+            if (nc++ > 1) {
+                return;
+            }
+            NSArray *relations = node.relations;
+            NSLog(@"this node-name: %@", node.name);
+            for (Relation *relation in relations) {
+                NSLog(@"relation: %@, uuid: %@", relation.edge.name, relation.node.uuid);
+                Node *tmpNode = [nodeDictionary objectForKey:relation.node.uuid];
+                NSLog(@"tmpNode.relations.count: %li", tmpNode.relations.count);
+                traverseNodes(tmpNode);
+                //                        NSLog(@"node: %@, relation: %@, uuid: %@", tmpNode.name, tmpRelation.edge.name, tmpRelation.node.uuid);
+                    }
+        } copy];
+        
+        NSMutableArray *nodeChain = [[NSMutableArray alloc] init];
+        
         Node *mnode = [[Node alloc] initWithName:@"mnode" andDescription:@"Mother of All Nodes"];
         Node *node1 = [[Node alloc] initWithName:@"Claus Guttesen" andDescription:@"complete name"];
         Node *node2 = [[Node alloc] initWithName:@"Anne-Merete Kleppenes" andDescription:@"complete name"];
@@ -81,18 +101,7 @@ int main(int argc, const char * argv[]) {
             NSLog(@"node-uuid: %@, node-name: %@", node.uuid, node.name);
         }*/
         
-        Node *thisNode = node3;
-        NSArray *relations = thisNode.relations;
-        NSLog(@"this node-name: %@", thisNode.name);
-        for (Relation *relation in relations) {
-            NSLog(@"relation: %@, uuid: %@", relation.edge.name, relation.node.uuid);
-            Node *tmpNode = [nodeDictionary objectForKey:relation.node.uuid];
-            NSArray *tmpRelations = tmpNode.relations;
-            for (Relation *tmpRelation in tmpRelations) {
-                NSLog(@"node: %@, relation: %@, uuid: %@", tmpNode.name, tmpRelation.edge.name, tmpRelation.node.uuid);
-            }
-        }
-        
+        traverseNodes(node1);
     }
     return 0;
     
